@@ -1,0 +1,2 @@
+cat "hist.txt"
+ae

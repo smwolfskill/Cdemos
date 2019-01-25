@@ -1,0 +1,48 @@
+/**
+ * Mini Valgrind Lab
+ * CS 241 - Fall 2016
+ */
+
+#include "mini_valgrind.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+void printTest(int testNum) {
+	printf("======================\nTEST %d:\n", testNum);
+}
+
+void printUsages() {
+	printf("total_usage = %lu\ntotal_free = %lu\nbad_frees = %lu\n", total_usage, total_free, bad_frees);
+}
+
+void resetGlobals() { //reset global vars. in mini_valgrind
+	total_usage = 0;
+	total_free = 0;
+	bad_frees = 0;
+}
+
+int main() {
+  // your tests here using malloc and free
+  	int * hi;
+  	//Test 1: detect totally lost: not enough frees
+  	printTest(1);
+	hi = malloc(3);
+	hi = malloc(4); //totally lost 3 bytes
+	*hi = 4;
+	//printf("\tBEFORE free(): & = %p\n", hi);
+	free(hi);
+	//print_report(); //weird. outputs to result.txt. see print.c
+	printUsages();
+	resetGlobals();
+	//Test 2: detect double free
+	printTest(2);
+	hi = malloc(5);
+	free(hi);
+	free(hi);
+	printUsages();
+	resetGlobals();
+	//
+  // Do NOT modify this line
+  atexit(print_report);
+  return 0;
+}

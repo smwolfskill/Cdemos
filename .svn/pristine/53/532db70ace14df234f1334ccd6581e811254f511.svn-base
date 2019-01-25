@@ -1,0 +1,166 @@
+/**
+ * Machine Problem: Password Cracker
+ * CS 241 - Fall 2016
+ */
+#include "cracker1.h"
+#include "format.h"
+#include "utils.h"
+#include "thread_status.h" //For thread debugging
+#include <string.h>
+#include <pthread.h>
+#include <stdint.h>
+#include <crypt.h> //for crypt_r
+#include <stdlib.h>
+#include <stdio.h>
+
+/*typedef struct threadArgs {
+	int id;
+	char * username;
+	char * hashedPass;
+} threadArgs_t;
+
+threadArgs_t * threadArgs_create(int id, char * username, char * hashedPass) {
+	threadArgs_t * newArgs = malloc(sizeof(threadArgs_t));
+	newArgs->id = id;
+	newArgs->username = username;
+	newArgs->hashedPass = hashedPass;
+	return newArgs;
+}*/
+
+int numPasswords = 0; //#passes need to decrypt = length of usernames[], hashes[]
+int numThreads = 0;
+pthread_mutex_t m = PTHREAD_MUTEX_INITIALIZER;
+
+//Recursively evaluates all possible passwords. (only lowercase chars a..z)
+//Returns NULL if incorrect guess, or (guess) if the guess was correct
+char * checkChar(char * hashed, char * guess, int index, int passLen, struct crypt_data * cdata, int * attempts) {
+	/*static unsigned int count = 0;
+	count++;
+	if(count % 100000 == 0) printf("\tcheckChar: called w/ index = %d; passLen = %d\n", index, passLen);*/
+	if(index == passLen) { //base case: have a filled-in guess
+		char * result = crypt_r((const char*) guess, "xx", cdata);
+		//crypt_r returns based on allocated cdata, so don't need to free
+		(*attempts)++;
+		if(!strcmp(result, hashed)) {
+			printf("\tcheckChar: match! pass = %s\n", guess);
+			return result; //success!
+		}
+		return NULL; //incorrect guess
+	}
+	for(int i = 0; i < 26; i++) { //recursive case: not done filling in our guesses
+		guess[index] = (char) (((int) 'a') + i);
+		char * attempt = checkChar(hashed, guess, index+1, passLen, cdata, attempts);
+		if(attempt != NULL) return attempt;
+		//else, keep going
+	}
+	//printf("\tcheckChar: nothing matched!!\n");
+	return NULL; //somehow, nothing we tried was correct (bug?)
+}
+
+/*char** separate(char * input, char delim) {
+	char ** delimInput;#include "thread_status.h"
+	int i = 0;
+	int separates = 0; //# strings separated by delim
+	while(input[i] != '\0') {
+		if(input[i] == delim) separates++;
+		i++;
+	}
+	if(separates == 0) return NULL; //nothing to separate
+	delimInput = malloc(separates * sizeof(char*));
+	i = 0;
+	int curSeparate = 0;
+	int curIncrement = 0; //increment for curSeparate
+	while(curSeparate < separates) {
+		
+		i++;
+	}
+	return delimInput;
+}*/
+
+//Thread-safe call to read the next line of input from (fd), and return it.
+char * nextLine(FILE * fd) {
+	char * buf = NULL;
+	size_t capacity = 0;
+	ssize_t result = 1;
+	pthread_mutex_lock(&m);
+	result = getline(&buf, &capacity, fd);
+	pthread_mutex_unlock(&m);
+	if(result>0 && buf[result-1]=='\n') {
+		buf[result-1] = '\0'; //replace terminating ‘\n’ with ‘\0’ which is much more useful
+		numPasswords++;
+	} else {
+		free(buf);
+		return NULL;
+	}
+	return buf;
+}
+
+//Returns the first index in which the char (toFind) appears. -1 means not found.
+int indexOf(char * toSearch, char toFind) {
+	int i = 0;
+	while(toSearch[i]) {
+		if(toSearch[i] == toFind) return i;
+		i++;
+	}
+	return -1; //not found
+}
+
+//Work done by thread. Returns # successful decryptions (recovered)
+void * crack(void * args) {
+	threadStatusSet("initializing...");
+	int id = (int) ((intptr_t) args);
+	int recovered = 0; //successful decryptions
+	char * username;
+	char * hash;
+	char * guess;
+	int startIndex = 0; //index of first unknown char of guess
+	int attempts = 0;
+	threadStatusSet("getting next line...");
+	char * line = nextLine(stdin);
+	struct crypt_data * cdata = malloc(sizeof(struct crypt_data));
+	cdata->initialized = 0;
+	for(int i = 0; line; i += numThreads){ //TODO: Don't need for loop or i!
+		char * save = line;
+		username = strtok_r(save, " ", &save);
+		hash = strtok_r(save, " ", &save);
+		guess = strtok_r(save, " ", &save);
+		startIndex = indexOf(guess, '.');
+		printf("Thread %d, i = %d: user = %s; hash = %s; guess = %s; startIndex = %d\n", id, i, username, hash, guess, startIndex);
+		if(startIndex == -1) { fprintf(stderr, "Thread %d: guess did not contain '.'! Quitting\n", id); break;}
+		threadStatusSet("cracking...");
+		char * result = checkChar(hash, guess, startIndex, strlen(guess), cdata, &attempts);
+		if(result != NULL) recovered++;
+		//TODO: TIME ELAPSED!!
+		v1_print_thread_result(id, username, result, attempts, 0/*TODO:time elapsed!!*/, (result ? 1 : 0));
+		/*free(username);
+		free(hash);
+		free(guess);*/
+		free(line);
+		threadStatusSet("getting next line...");
+		line = nextLine(stdin);
+		attempts = 0;
+	}
+	threadStatusSet("done!");
+	free(cdata);
+	return (void*) ((intptr_t) recovered);
+}
+
+int start(size_t thread_count) { //input piped in to stdin!
+	thread_count = 1; //TODO: TEMP! Get rid of when parallelize!!!
+	numThreads = thread_count; //TODO: Don't need? Don't think so!
+  int numRecovered = 0;
+  pthread_t tids[thread_count];
+  int recovered[thread_count];
+  for(size_t i = 0; i < thread_count; i++) {
+  	pthread_create(&tids[i], NULL, crack, (void*) (intptr_t) i);
+  }
+  for(size_t i = 0; i < thread_count; i++) {
+  	void * ret;
+  	pthread_join(tids[i], &ret);
+  	recovered[i] = (int) ((intptr_t) ret);
+  	numRecovered += recovered[i];
+  	printf("tid %ld returned w/ val. %d\n", i, recovered[i]);
+  }
+  v1_print_summary(numRecovered, numPasswords - numRecovered);
+  return 0;
+}

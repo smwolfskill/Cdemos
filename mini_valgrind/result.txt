@@ -1,0 +1,9 @@
+Heap report:
+
+
+Program made 0 bad call(s) to free.
+
+Heap summary:
+
+	Total memory usage: 0 bytes, Total memory free: 0 bytes
+	No leak, all memory are freed, Congratulations!

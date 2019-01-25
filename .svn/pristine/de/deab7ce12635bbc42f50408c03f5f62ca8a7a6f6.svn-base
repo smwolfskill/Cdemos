@@ -1,0 +1,562 @@
+[
+  {
+    "timestamp": "2016-09-28 22:00:00.585507", 
+    "testcases": [
+      {
+        "log": "Trying to compile your code...\nSuccessfully compiled your code..\nFailed the test\n\nstdout:\nMemory failed to allocate!\n[mcontest]: STATUS: FAILED=(256)\n[mcontest]: MAX: 0\n[mcontest]: AVG: 0.000000\n[mcontest]: TIME: 0.000000\n\n\nstderr:\n", 
+        "ptsEarned": 0.0, 
+        "ptsPossible": 1.0, 
+        "name": "part1_tester-1", 
+        "description": "./mcontest testers_exe/tester-1 (timeout 60 seconds)"
+      }, 
+      {
+        "log": "Trying to compile your code...\nSuccessfully compiled your code..\nFailed the test\n\nstdout:\nMemory failed to allocate!\n[mcontest]: STATUS: FAILED=(256)\n[mcontest]: MAX: 0\n[mcontest]: AVG: 0.000000\n[mcontest]: TIME: 0.000000\n\n\nstderr:\n", 
+        "ptsEarned": 0.0, 
+        "ptsPossible": 1.0, 
+        "name": "part1_tester-2", 
+        "description": "./mcontest testers_exe/tester-2 (timeout 60 seconds)"
+      }, 
+      {
+        "log": "Trying to compile your code...\nSuccessfully compiled your code..\nFailed the test\n\nstdout:\nMemory failed to allocate!\n[mcontest]: STATUS: FAILED=(256)\n[mcontest]: MAX: 0\n[mcontest]: AVG: 0.000000\n[mcontest]: TIME: 0.000000\n\n\nstderr:\n", 
+        "ptsEarned": 0.0, 
+        "ptsPossible": 1.0, 
+        "name": "part1_tester-3", 
+        "description": "./mcontest testers_exe/tester-3 (timeout 60 seconds)"
+      }, 
+      {
+        "log": "Trying to compile your code...\nSuccessfully compiled your code..\nFailed the test\n\nstdout:\nMemory failed to allocate!\n[mcontest]: STATUS: FAILED=(256)\n[mcontest]: MAX: 0\n[mcontest]: AVG: 0.000000\n[mcontest]: TIME: 0.000000\n\n\nstderr:\n", 
+        "ptsEarned": 0.0, 
+        "ptsPossible": 1.0, 
+        "name": "part1_tester-4", 
+        "description": "./mcontest testers_exe/tester-4 (timeout 60 seconds)"
+      }, 
+      {
+        "log": "Trying to compile your code...\nSuccessfully compiled your code..\nFailed the test\n\nstdout:\nMemory failed to allocate!\n[mcontest]: STATUS: FAILED=(256)\n[mcontest]: MAX: 0\n[mcontest]: AVG: 0.000000\n[mcontest]: TIME: 0.000000\n\n\nstderr:\n", 
+        "ptsEarned": 0.0, 
+        "ptsPossible": 1.0, 
+        "name": "part1_tester-5", 
+        "description": "./mcontest testers_exe/tester-5 (timeout 60 seconds)"
+      }, 
+      {
+        "log": "Trying to compile your code...\nSuccessfully compiled your code..\nFailed the test\n\nstdout:\n[mcontest]: STATUS: FAILED=(11)\n[mcontest]: MAX: 0\n[mcontest]: AVG: 0.000000\n[mcontest]: TIME: 0.000000\n\n\nstderr:\n", 
+        "ptsEarned": 0.0, 
+        "ptsPossible": 1.0, 
+        "name": "part1_tester-6", 
+        "description": "./mcontest testers_exe/tester-6 (timeout 60 seconds)"
+      }
+    ], 
+    "revision": "35748", 
+    "checksum": "c101234294d9380b8c3f55b113200179affba617  alloc.c\ne564275769c257435e86ccba54aad48b6acc52ff  nickname.txt"
+  }, 
+  {
+    "timestamp": "2016-09-29 22:00:00.633444", 
+    "testcases": [
+      {
+        "ptsPossible": 1.0, 
+        "ptsEarned": 0.0, 
+        "description": "./mcontest testers_exe/tester-1 (timeout 60 seconds)", 
+        "name": "part1_tester-1", 
+        "log": "Trying to compile your code...\nFAILED TO COMPILE!\nalloc.c:22:9: error: comparison between pointer and integer ('memNode_t *' (aka 'struct memNode *') and 'int') [-Werror]\n        if(mem == -1) mem = NULL; //sbrk error\n           ~~~ ^  ~~\nalloc.c:19:35: warning: unused parameter 'size' [-Wunused-parameter]\nmemNode_t * memNode_create(size_t size) {\n                                  ^\nalloc.c:22:5: error: variable 'mem' is uninitialized when used here [-Werror,-Wuninitialized]\n        if(mem == -1) mem = NULL; //sbrk error\n           ^~~\nalloc.c:20:17: note: initialize the variable 'mem' to silence this warning\n        memNode_t * mem;\n                       ^\n                        = NULL\nalloc.c:55:12: error: incomplete type 'void' is not assignable\n                mem[i] = (char) 0;\n                ~~~~~~ ^\nalloc.c:107:17: warning: unused parameter 'ptr' [-Wunused-parameter]\nvoid free(void *ptr) {\n                ^\nalloc.c:156:21: warning: unused parameter 'ptr' [-Wunused-parameter]\nvoid *realloc(void *ptr, size_t size) {\n                    ^\nalloc.c:156:33: warning: unused parameter 'size' [-Wunused-parameter]\nvoid *realloc(void *ptr, size_t size) {\n                                ^\n4 warnings and 3 errors generated.\nmake: *** [alloc.so] Error 1\n"
+      }, 
+      {
+        "ptsPossible": 1.0, 
+        "ptsEarned": 0.0, 
+        "description": "./mcontest testers_exe/tester-2 (timeout 60 seconds)", 
+        "name": "part1_tester-2", 
+        "log": "Trying to compile your code...\nFAILED TO COMPILE!\nalloc.c:22:9: error: comparison between pointer and integer ('memNode_t *' (aka 'struct memNode *') and 'int') [-Werror]\n        if(mem == -1) mem = NULL; //sbrk error\n           ~~~ ^  ~~\nalloc.c:19:35: warning: unused parameter 'size' [-Wunused-parameter]\nmemNode_t * memNode_create(size_t size) {\n                                  ^\nalloc.c:22:5: error: variable 'mem' is uninitialized when used here [-Werror,-Wuninitialized]\n        if(mem == -1) mem = NULL; //sbrk error\n           ^~~\nalloc.c:20:17: note: initialize the variable 'mem' to silence this warning\n        memNode_t * mem;\n                       ^\n                        = NULL\nalloc.c:55:12: error: incomplete type 'void' is not assignable\n                mem[i] = (char) 0;\n                ~~~~~~ ^\nalloc.c:107:17: warning: unused parameter 'ptr' [-Wunused-parameter]\nvoid free(void *ptr) {\n                ^\nalloc.c:156:21: warning: unused parameter 'ptr' [-Wunused-parameter]\nvoid *realloc(void *ptr, size_t size) {\n                    ^\nalloc.c:156:33: warning: unused parameter 'size' [-Wunused-parameter]\nvoid *realloc(void *ptr, size_t size) {\n                                ^\n4 warnings and 3 errors generated.\nmake: *** [alloc.so] Error 1\n"
+      }, 
+      {
+        "ptsPossible": 1.0, 
+        "ptsEarned": 0.0, 
+        "description": "./mcontest testers_exe/tester-3 (timeout 60 seconds)", 
+        "name": "part1_tester-3", 
+        "log": "Trying to compile your code...\nFAILED TO COMPILE!\nalloc.c:22:9: error: comparison between pointer and integer ('memNode_t *' (aka 'struct memNode *') and 'int') [-Werror]\n        if(mem == -1) mem = NULL; //sbrk error\n           ~~~ ^  ~~\nalloc.c:19:35: warning: unused parameter 'size' [-Wunused-parameter]\nmemNode_t * memNode_create(size_t size) {\n                                  ^\nalloc.c:22:5: error: variable 'mem' is uninitialized when used here [-Werror,-Wuninitialized]\n        if(mem == -1) mem = NULL; //sbrk error\n           ^~~\nalloc.c:20:17: note: initialize the variable 'mem' to silence this warning\n        memNode_t * mem;\n                       ^\n                        = NULL\nalloc.c:55:12: error: incomplete type 'void' is not assignable\n                mem[i] = (char) 0;\n                ~~~~~~ ^\nalloc.c:107:17: warning: unused parameter 'ptr' [-Wunused-parameter]\nvoid free(void *ptr) {\n                ^\nalloc.c:156:21: warning: unused parameter 'ptr' [-Wunused-parameter]\nvoid *realloc(void *ptr, size_t size) {\n                    ^\nalloc.c:156:33: warning: unused parameter 'size' [-Wunused-parameter]\nvoid *realloc(void *ptr, size_t size) {\n                                ^\n4 warnings and 3 errors generated.\nmake: *** [alloc.so] Error 1\n"
+      }, 
+      {
+        "ptsPossible": 1.0, 
+        "ptsEarned": 0.0, 
+        "description": "./mcontest testers_exe/tester-4 (timeout 60 seconds)", 
+        "name": "part1_tester-4", 
+        "log": "Trying to compile your code...\nFAILED TO COMPILE!\nalloc.c:22:9: error: comparison between pointer and integer ('memNode_t *' (aka 'struct memNode *') and 'int') [-Werror]\n        if(mem == -1) mem = NULL; //sbrk error\n           ~~~ ^  ~~\nalloc.c:19:35: warning: unused parameter 'size' [-Wunused-parameter]\nmemNode_t * memNode_create(size_t size) {\n                                  ^\nalloc.c:22:5: error: variable 'mem' is uninitialized when used here [-Werror,-Wuninitialized]\n        if(mem == -1) mem = NULL; //sbrk error\n           ^~~\nalloc.c:20:17: note: initialize the variable 'mem' to silence this warning\n        memNode_t * mem;\n                       ^\n                        = NULL\nalloc.c:55:12: error: incomplete type 'void' is not assignable\n                mem[i] = (char) 0;\n                ~~~~~~ ^\nalloc.c:107:17: warning: unused parameter 'ptr' [-Wunused-parameter]\nvoid free(void *ptr) {\n                ^\nalloc.c:156:21: warning: unused parameter 'ptr' [-Wunused-parameter]\nvoid *realloc(void *ptr, size_t size) {\n                    ^\nalloc.c:156:33: warning: unused parameter 'size' [-Wunused-parameter]\nvoid *realloc(void *ptr, size_t size) {\n                                ^\n4 warnings and 3 errors generated.\nmake: *** [alloc.so] Error 1\n"
+      }, 
+      {
+        "ptsPossible": 1.0, 
+        "ptsEarned": 0.0, 
+        "description": "./mcontest testers_exe/tester-5 (timeout 60 seconds)", 
+        "name": "part1_tester-5", 
+        "log": "Trying to compile your code...\nFAILED TO COMPILE!\nalloc.c:22:9: error: comparison between pointer and integer ('memNode_t *' (aka 'struct memNode *') and 'int') [-Werror]\n        if(mem == -1) mem = NULL; //sbrk error\n           ~~~ ^  ~~\nalloc.c:19:35: warning: unused parameter 'size' [-Wunused-parameter]\nmemNode_t * memNode_create(size_t size) {\n                                  ^\nalloc.c:22:5: error: variable 'mem' is uninitialized when used here [-Werror,-Wuninitialized]\n        if(mem == -1) mem = NULL; //sbrk error\n           ^~~\nalloc.c:20:17: note: initialize the variable 'mem' to silence this warning\n        memNode_t * mem;\n                       ^\n                        = NULL\nalloc.c:55:12: error: incomplete type 'void' is not assignable\n                mem[i] = (char) 0;\n                ~~~~~~ ^\nalloc.c:107:17: warning: unused parameter 'ptr' [-Wunused-parameter]\nvoid free(void *ptr) {\n                ^\nalloc.c:156:21: warning: unused parameter 'ptr' [-Wunused-parameter]\nvoid *realloc(void *ptr, size_t size) {\n                    ^\nalloc.c:156:33: warning: unused parameter 'size' [-Wunused-parameter]\nvoid *realloc(void *ptr, size_t size) {\n                                ^\n4 warnings and 3 errors generated.\nmake: *** [alloc.so] Error 1\n"
+      }, 
+      {
+        "ptsPossible": 1.0, 
+        "ptsEarned": 0.0, 
+        "description": "./mcontest testers_exe/tester-6 (timeout 60 seconds)", 
+        "name": "part1_tester-6", 
+        "log": "Trying to compile your code...\nFAILED TO COMPILE!\nalloc.c:22:9: error: comparison between pointer and integer ('memNode_t *' (aka 'struct memNode *') and 'int') [-Werror]\n        if(mem == -1) mem = NULL; //sbrk error\n           ~~~ ^  ~~\nalloc.c:19:35: warning: unused parameter 'size' [-Wunused-parameter]\nmemNode_t * memNode_create(size_t size) {\n                                  ^\nalloc.c:22:5: error: variable 'mem' is uninitialized when used here [-Werror,-Wuninitialized]\n        if(mem == -1) mem = NULL; //sbrk error\n           ^~~\nalloc.c:20:17: note: initialize the variable 'mem' to silence this warning\n        memNode_t * mem;\n                       ^\n                        = NULL\nalloc.c:55:12: error: incomplete type 'void' is not assignable\n                mem[i] = (char) 0;\n                ~~~~~~ ^\nalloc.c:107:17: warning: unused parameter 'ptr' [-Wunused-parameter]\nvoid free(void *ptr) {\n                ^\nalloc.c:156:21: warning: unused parameter 'ptr' [-Wunused-parameter]\nvoid *realloc(void *ptr, size_t size) {\n                    ^\nalloc.c:156:33: warning: unused parameter 'size' [-Wunused-parameter]\nvoid *realloc(void *ptr, size_t size) {\n                                ^\n4 warnings and 3 errors generated.\nmake: *** [alloc.so] Error 1\n"
+      }
+    ], 
+    "checksum": "bc285021b855938eaacb9e6a0ec33938e3f64f0e  alloc.c\n3898a7074248d1ef0532795256423c994b3d5b77  nickname.txt", 
+    "revision": "37037"
+  }, 
+  {
+    "timestamp": "2016-09-30 22:00:00.520745", 
+    "testcases": [
+      {
+        "description": "./mcontest testers_exe/tester-1 (timeout 60 seconds)", 
+        "ptsEarned": 0.0, 
+        "log": "Trying to compile your code...\nFAILED TO COMPILE!\nalloc.c:22:9: error: comparison between pointer and integer ('memNode_t *' (aka 'struct memNode *') and 'int') [-Werror]\n        if(mem == -1) mem = NULL; //sbrk error\n           ~~~ ^  ~~\nalloc.c:19:35: warning: unused parameter 'size' [-Wunused-parameter]\nmemNode_t * memNode_create(size_t size) {\n                                  ^\nalloc.c:22:5: error: variable 'mem' is uninitialized when used here [-Werror,-Wuninitialized]\n        if(mem == -1) mem = NULL; //sbrk error\n           ^~~\nalloc.c:20:17: note: initialize the variable 'mem' to silence this warning\n        memNode_t * mem;\n                       ^\n                        = NULL\nalloc.c:55:12: error: incomplete type 'void' is not assignable\n                mem[i] = (char) 0;\n                ~~~~~~ ^\nalloc.c:107:17: warning: unused parameter 'ptr' [-Wunused-parameter]\nvoid free(void *ptr) {\n                ^\nalloc.c:156:21: warning: unused parameter 'ptr' [-Wunused-parameter]\nvoid *realloc(void *ptr, size_t size) {\n                    ^\nalloc.c:156:33: warning: unused parameter 'size' [-Wunused-parameter]\nvoid *realloc(void *ptr, size_t size) {\n                                ^\n4 warnings and 3 errors generated.\nmake: *** [alloc.so] Error 1\n", 
+        "name": "part1_tester-1", 
+        "ptsPossible": 1.0
+      }, 
+      {
+        "description": "./mcontest testers_exe/tester-2 (timeout 60 seconds)", 
+        "ptsEarned": 0.0, 
+        "log": "Trying to compile your code...\nFAILED TO COMPILE!\nalloc.c:22:9: error: comparison between pointer and integer ('memNode_t *' (aka 'struct memNode *') and 'int') [-Werror]\n        if(mem == -1) mem = NULL; //sbrk error\n           ~~~ ^  ~~\nalloc.c:19:35: warning: unused parameter 'size' [-Wunused-parameter]\nmemNode_t * memNode_create(size_t size) {\n                                  ^\nalloc.c:22:5: error: variable 'mem' is uninitialized when used here [-Werror,-Wuninitialized]\n        if(mem == -1) mem = NULL; //sbrk error\n           ^~~\nalloc.c:20:17: note: initialize the variable 'mem' to silence this warning\n        memNode_t * mem;\n                       ^\n                        = NULL\nalloc.c:55:12: error: incomplete type 'void' is not assignable\n                mem[i] = (char) 0;\n                ~~~~~~ ^\nalloc.c:107:17: warning: unused parameter 'ptr' [-Wunused-parameter]\nvoid free(void *ptr) {\n                ^\nalloc.c:156:21: warning: unused parameter 'ptr' [-Wunused-parameter]\nvoid *realloc(void *ptr, size_t size) {\n                    ^\nalloc.c:156:33: warning: unused parameter 'size' [-Wunused-parameter]\nvoid *realloc(void *ptr, size_t size) {\n                                ^\n4 warnings and 3 errors generated.\nmake: *** [alloc.so] Error 1\n", 
+        "name": "part1_tester-2", 
+        "ptsPossible": 1.0
+      }, 
+      {
+        "description": "./mcontest testers_exe/tester-3 (timeout 60 seconds)", 
+        "ptsEarned": 0.0, 
+        "log": "Trying to compile your code...\nFAILED TO COMPILE!\nalloc.c:22:9: error: comparison between pointer and integer ('memNode_t *' (aka 'struct memNode *') and 'int') [-Werror]\n        if(mem == -1) mem = NULL; //sbrk error\n           ~~~ ^  ~~\nalloc.c:19:35: warning: unused parameter 'size' [-Wunused-parameter]\nmemNode_t * memNode_create(size_t size) {\n                                  ^\nalloc.c:22:5: error: variable 'mem' is uninitialized when used here [-Werror,-Wuninitialized]\n        if(mem == -1) mem = NULL; //sbrk error\n           ^~~\nalloc.c:20:17: note: initialize the variable 'mem' to silence this warning\n        memNode_t * mem;\n                       ^\n                        = NULL\nalloc.c:55:12: error: incomplete type 'void' is not assignable\n                mem[i] = (char) 0;\n                ~~~~~~ ^\nalloc.c:107:17: warning: unused parameter 'ptr' [-Wunused-parameter]\nvoid free(void *ptr) {\n                ^\nalloc.c:156:21: warning: unused parameter 'ptr' [-Wunused-parameter]\nvoid *realloc(void *ptr, size_t size) {\n                    ^\nalloc.c:156:33: warning: unused parameter 'size' [-Wunused-parameter]\nvoid *realloc(void *ptr, size_t size) {\n                                ^\n4 warnings and 3 errors generated.\nmake: *** [alloc.so] Error 1\n", 
+        "name": "part1_tester-3", 
+        "ptsPossible": 1.0
+      }, 
+      {
+        "description": "./mcontest testers_exe/tester-4 (timeout 60 seconds)", 
+        "ptsEarned": 0.0, 
+        "log": "Trying to compile your code...\nFAILED TO COMPILE!\nalloc.c:22:9: error: comparison between pointer and integer ('memNode_t *' (aka 'struct memNode *') and 'int') [-Werror]\n        if(mem == -1) mem = NULL; //sbrk error\n           ~~~ ^  ~~\nalloc.c:19:35: warning: unused parameter 'size' [-Wunused-parameter]\nmemNode_t * memNode_create(size_t size) {\n                                  ^\nalloc.c:22:5: error: variable 'mem' is uninitialized when used here [-Werror,-Wuninitialized]\n        if(mem == -1) mem = NULL; //sbrk error\n           ^~~\nalloc.c:20:17: note: initialize the variable 'mem' to silence this warning\n        memNode_t * mem;\n                       ^\n                        = NULL\nalloc.c:55:12: error: incomplete type 'void' is not assignable\n                mem[i] = (char) 0;\n                ~~~~~~ ^\nalloc.c:107:17: warning: unused parameter 'ptr' [-Wunused-parameter]\nvoid free(void *ptr) {\n                ^\nalloc.c:156:21: warning: unused parameter 'ptr' [-Wunused-parameter]\nvoid *realloc(void *ptr, size_t size) {\n                    ^\nalloc.c:156:33: warning: unused parameter 'size' [-Wunused-parameter]\nvoid *realloc(void *ptr, size_t size) {\n                                ^\n4 warnings and 3 errors generated.\nmake: *** [alloc.so] Error 1\n", 
+        "name": "part1_tester-4", 
+        "ptsPossible": 1.0
+      }, 
+      {
+        "description": "./mcontest testers_exe/tester-5 (timeout 60 seconds)", 
+        "ptsEarned": 0.0, 
+        "log": "Trying to compile your code...\nFAILED TO COMPILE!\nalloc.c:22:9: error: comparison between pointer and integer ('memNode_t *' (aka 'struct memNode *') and 'int') [-Werror]\n        if(mem == -1) mem = NULL; //sbrk error\n           ~~~ ^  ~~\nalloc.c:19:35: warning: unused parameter 'size' [-Wunused-parameter]\nmemNode_t * memNode_create(size_t size) {\n                                  ^\nalloc.c:22:5: error: variable 'mem' is uninitialized when used here [-Werror,-Wuninitialized]\n        if(mem == -1) mem = NULL; //sbrk error\n           ^~~\nalloc.c:20:17: note: initialize the variable 'mem' to silence this warning\n        memNode_t * mem;\n                       ^\n                        = NULL\nalloc.c:55:12: error: incomplete type 'void' is not assignable\n                mem[i] = (char) 0;\n                ~~~~~~ ^\nalloc.c:107:17: warning: unused parameter 'ptr' [-Wunused-parameter]\nvoid free(void *ptr) {\n                ^\nalloc.c:156:21: warning: unused parameter 'ptr' [-Wunused-parameter]\nvoid *realloc(void *ptr, size_t size) {\n                    ^\nalloc.c:156:33: warning: unused parameter 'size' [-Wunused-parameter]\nvoid *realloc(void *ptr, size_t size) {\n                                ^\n4 warnings and 3 errors generated.\nmake: *** [alloc.so] Error 1\n", 
+        "name": "part1_tester-5", 
+        "ptsPossible": 1.0
+      }, 
+      {
+        "description": "./mcontest testers_exe/tester-6 (timeout 60 seconds)", 
+        "ptsEarned": 0.0, 
+        "log": "Trying to compile your code...\nFAILED TO COMPILE!\nalloc.c:22:9: error: comparison between pointer and integer ('memNode_t *' (aka 'struct memNode *') and 'int') [-Werror]\n        if(mem == -1) mem = NULL; //sbrk error\n           ~~~ ^  ~~\nalloc.c:19:35: warning: unused parameter 'size' [-Wunused-parameter]\nmemNode_t * memNode_create(size_t size) {\n                                  ^\nalloc.c:22:5: error: variable 'mem' is uninitialized when used here [-Werror,-Wuninitialized]\n        if(mem == -1) mem = NULL; //sbrk error\n           ^~~\nalloc.c:20:17: note: initialize the variable 'mem' to silence this warning\n        memNode_t * mem;\n                       ^\n                        = NULL\nalloc.c:55:12: error: incomplete type 'void' is not assignable\n                mem[i] = (char) 0;\n                ~~~~~~ ^\nalloc.c:107:17: warning: unused parameter 'ptr' [-Wunused-parameter]\nvoid free(void *ptr) {\n                ^\nalloc.c:156:21: warning: unused parameter 'ptr' [-Wunused-parameter]\nvoid *realloc(void *ptr, size_t size) {\n                    ^\nalloc.c:156:33: warning: unused parameter 'size' [-Wunused-parameter]\nvoid *realloc(void *ptr, size_t size) {\n                                ^\n4 warnings and 3 errors generated.\nmake: *** [alloc.so] Error 1\n", 
+        "name": "part1_tester-6", 
+        "ptsPossible": 1.0
+      }
+    ], 
+    "revision": "37589", 
+    "checksum": "bc285021b855938eaacb9e6a0ec33938e3f64f0e  alloc.c\n3898a7074248d1ef0532795256423c994b3d5b77  nickname.txt"
+  }, 
+  {
+    "timestamp": "2016-10-01 19:24:52.146432", 
+    "testcases": [
+      {
+        "log": "Trying to compile your code...\nFAILED TO COMPILE!\nalloc.c:22:9: error: comparison between pointer and integer ('memNode_t *' (aka 'struct memNode *') and 'int') [-Werror]\n        if(mem == -1) mem = NULL; //sbrk error\n           ~~~ ^  ~~\nalloc.c:19:35: warning: unused parameter 'size' [-Wunused-parameter]\nmemNode_t * memNode_create(size_t size) {\n                                  ^\nalloc.c:22:5: error: variable 'mem' is uninitialized when used here [-Werror,-Wuninitialized]\n        if(mem == -1) mem = NULL; //sbrk error\n           ^~~\nalloc.c:20:17: note: initialize the variable 'mem' to silence this warning\n        memNode_t * mem;\n                       ^\n                        = NULL\nalloc.c:55:12: error: incomplete type 'void' is not assignable\n                mem[i] = (char) 0;\n                ~~~~~~ ^\nalloc.c:107:17: warning: unused parameter 'ptr' [-Wunused-parameter]\nvoid free(void *ptr) {\n                ^\nalloc.c:156:21: warning: unused parameter 'ptr' [-Wunused-parameter]\nvoid *realloc(void *ptr, size_t size) {\n                    ^\nalloc.c:156:33: warning: unused parameter 'size' [-Wunused-parameter]\nvoid *realloc(void *ptr, size_t size) {\n                                ^\n4 warnings and 3 errors generated.\nmake: *** [alloc.so] Error 1\n", 
+        "ptsEarned": 0.0, 
+        "ptsPossible": 1.0, 
+        "name": "part1_tester-1", 
+        "description": "./mcontest testers_exe/tester-1 (timeout 60 seconds)"
+      }, 
+      {
+        "log": "Trying to compile your code...\nFAILED TO COMPILE!\nalloc.c:22:9: error: comparison between pointer and integer ('memNode_t *' (aka 'struct memNode *') and 'int') [-Werror]\n        if(mem == -1) mem = NULL; //sbrk error\n           ~~~ ^  ~~\nalloc.c:19:35: warning: unused parameter 'size' [-Wunused-parameter]\nmemNode_t * memNode_create(size_t size) {\n                                  ^\nalloc.c:22:5: error: variable 'mem' is uninitialized when used here [-Werror,-Wuninitialized]\n        if(mem == -1) mem = NULL; //sbrk error\n           ^~~\nalloc.c:20:17: note: initialize the variable 'mem' to silence this warning\n        memNode_t * mem;\n                       ^\n                        = NULL\nalloc.c:55:12: error: incomplete type 'void' is not assignable\n                mem[i] = (char) 0;\n                ~~~~~~ ^\nalloc.c:107:17: warning: unused parameter 'ptr' [-Wunused-parameter]\nvoid free(void *ptr) {\n                ^\nalloc.c:156:21: warning: unused parameter 'ptr' [-Wunused-parameter]\nvoid *realloc(void *ptr, size_t size) {\n                    ^\nalloc.c:156:33: warning: unused parameter 'size' [-Wunused-parameter]\nvoid *realloc(void *ptr, size_t size) {\n                                ^\n4 warnings and 3 errors generated.\nmake: *** [alloc.so] Error 1\n", 
+        "ptsEarned": 0.0, 
+        "ptsPossible": 1.0, 
+        "name": "part1_tester-2", 
+        "description": "./mcontest testers_exe/tester-2 (timeout 60 seconds)"
+      }, 
+      {
+        "log": "Trying to compile your code...\nFAILED TO COMPILE!\nalloc.c:22:9: error: comparison between pointer and integer ('memNode_t *' (aka 'struct memNode *') and 'int') [-Werror]\n        if(mem == -1) mem = NULL; //sbrk error\n           ~~~ ^  ~~\nalloc.c:19:35: warning: unused parameter 'size' [-Wunused-parameter]\nmemNode_t * memNode_create(size_t size) {\n                                  ^\nalloc.c:22:5: error: variable 'mem' is uninitialized when used here [-Werror,-Wuninitialized]\n        if(mem == -1) mem = NULL; //sbrk error\n           ^~~\nalloc.c:20:17: note: initialize the variable 'mem' to silence this warning\n        memNode_t * mem;\n                       ^\n                        = NULL\nalloc.c:55:12: error: incomplete type 'void' is not assignable\n                mem[i] = (char) 0;\n                ~~~~~~ ^\nalloc.c:107:17: warning: unused parameter 'ptr' [-Wunused-parameter]\nvoid free(void *ptr) {\n                ^\nalloc.c:156:21: warning: unused parameter 'ptr' [-Wunused-parameter]\nvoid *realloc(void *ptr, size_t size) {\n                    ^\nalloc.c:156:33: warning: unused parameter 'size' [-Wunused-parameter]\nvoid *realloc(void *ptr, size_t size) {\n                                ^\n4 warnings and 3 errors generated.\nmake: *** [alloc.so] Error 1\n", 
+        "ptsEarned": 0.0, 
+        "ptsPossible": 1.0, 
+        "name": "part1_tester-3", 
+        "description": "./mcontest testers_exe/tester-3 (timeout 60 seconds)"
+      }, 
+      {
+        "log": "Trying to compile your code...\nFAILED TO COMPILE!\nalloc.c:22:9: error: comparison between pointer and integer ('memNode_t *' (aka 'struct memNode *') and 'int') [-Werror]\n        if(mem == -1) mem = NULL; //sbrk error\n           ~~~ ^  ~~\nalloc.c:19:35: warning: unused parameter 'size' [-Wunused-parameter]\nmemNode_t * memNode_create(size_t size) {\n                                  ^\nalloc.c:22:5: error: variable 'mem' is uninitialized when used here [-Werror,-Wuninitialized]\n        if(mem == -1) mem = NULL; //sbrk error\n           ^~~\nalloc.c:20:17: note: initialize the variable 'mem' to silence this warning\n        memNode_t * mem;\n                       ^\n                        = NULL\nalloc.c:55:12: error: incomplete type 'void' is not assignable\n                mem[i] = (char) 0;\n                ~~~~~~ ^\nalloc.c:107:17: warning: unused parameter 'ptr' [-Wunused-parameter]\nvoid free(void *ptr) {\n                ^\nalloc.c:156:21: warning: unused parameter 'ptr' [-Wunused-parameter]\nvoid *realloc(void *ptr, size_t size) {\n                    ^\nalloc.c:156:33: warning: unused parameter 'size' [-Wunused-parameter]\nvoid *realloc(void *ptr, size_t size) {\n                                ^\n4 warnings and 3 errors generated.\nmake: *** [alloc.so] Error 1\n", 
+        "ptsEarned": 0.0, 
+        "ptsPossible": 1.0, 
+        "name": "part1_tester-4", 
+        "description": "./mcontest testers_exe/tester-4 (timeout 60 seconds)"
+      }, 
+      {
+        "log": "Trying to compile your code...\nFAILED TO COMPILE!\nalloc.c:22:9: error: comparison between pointer and integer ('memNode_t *' (aka 'struct memNode *') and 'int') [-Werror]\n        if(mem == -1) mem = NULL; //sbrk error\n           ~~~ ^  ~~\nalloc.c:19:35: warning: unused parameter 'size' [-Wunused-parameter]\nmemNode_t * memNode_create(size_t size) {\n                                  ^\nalloc.c:22:5: error: variable 'mem' is uninitialized when used here [-Werror,-Wuninitialized]\n        if(mem == -1) mem = NULL; //sbrk error\n           ^~~\nalloc.c:20:17: note: initialize the variable 'mem' to silence this warning\n        memNode_t * mem;\n                       ^\n                        = NULL\nalloc.c:55:12: error: incomplete type 'void' is not assignable\n                mem[i] = (char) 0;\n                ~~~~~~ ^\nalloc.c:107:17: warning: unused parameter 'ptr' [-Wunused-parameter]\nvoid free(void *ptr) {\n                ^\nalloc.c:156:21: warning: unused parameter 'ptr' [-Wunused-parameter]\nvoid *realloc(void *ptr, size_t size) {\n                    ^\nalloc.c:156:33: warning: unused parameter 'size' [-Wunused-parameter]\nvoid *realloc(void *ptr, size_t size) {\n                                ^\n4 warnings and 3 errors generated.\nmake: *** [alloc.so] Error 1\n", 
+        "ptsEarned": 0.0, 
+        "ptsPossible": 1.0, 
+        "name": "part1_tester-5", 
+        "description": "./mcontest testers_exe/tester-5 (timeout 60 seconds)"
+      }, 
+      {
+        "log": "Trying to compile your code...\nFAILED TO COMPILE!\nalloc.c:22:9: error: comparison between pointer and integer ('memNode_t *' (aka 'struct memNode *') and 'int') [-Werror]\n        if(mem == -1) mem = NULL; //sbrk error\n           ~~~ ^  ~~\nalloc.c:19:35: warning: unused parameter 'size' [-Wunused-parameter]\nmemNode_t * memNode_create(size_t size) {\n                                  ^\nalloc.c:22:5: error: variable 'mem' is uninitialized when used here [-Werror,-Wuninitialized]\n        if(mem == -1) mem = NULL; //sbrk error\n           ^~~\nalloc.c:20:17: note: initialize the variable 'mem' to silence this warning\n        memNode_t * mem;\n                       ^\n                        = NULL\nalloc.c:55:12: error: incomplete type 'void' is not assignable\n                mem[i] = (char) 0;\n                ~~~~~~ ^\nalloc.c:107:17: warning: unused parameter 'ptr' [-Wunused-parameter]\nvoid free(void *ptr) {\n                ^\nalloc.c:156:21: warning: unused parameter 'ptr' [-Wunused-parameter]\nvoid *realloc(void *ptr, size_t size) {\n                    ^\nalloc.c:156:33: warning: unused parameter 'size' [-Wunused-parameter]\nvoid *realloc(void *ptr, size_t size) {\n                                ^\n4 warnings and 3 errors generated.\nmake: *** [alloc.so] Error 1\n", 
+        "ptsEarned": 0.0, 
+        "ptsPossible": 1.0, 
+        "name": "part1_tester-6", 
+        "description": "./mcontest testers_exe/tester-6 (timeout 60 seconds)"
+      }
+    ], 
+    "checksum": "bc285021b855938eaacb9e6a0ec33938e3f64f0e  alloc.c\n3898a7074248d1ef0532795256423c994b3d5b77  nickname.txt", 
+    "revision": "38235"
+  }, 
+  {
+    "timestamp": "2016-10-01 22:00:00.578257", 
+    "testcases": [
+      {
+        "ptsPossible": 1.0, 
+        "ptsEarned": 0.0, 
+        "description": "./mcontest testers_exe/tester-1 (timeout 60 seconds)", 
+        "name": "part1_tester-1", 
+        "log": "Trying to compile your code...\nFAILED TO COMPILE!\nalloc.c:22:9: error: comparison between pointer and integer ('memNode_t *' (aka 'struct memNode *') and 'int') [-Werror]\n        if(mem == -1) mem = NULL; //sbrk error\n           ~~~ ^  ~~\nalloc.c:19:35: warning: unused parameter 'size' [-Wunused-parameter]\nmemNode_t * memNode_create(size_t size) {\n                                  ^\nalloc.c:22:5: error: variable 'mem' is uninitialized when used here [-Werror,-Wuninitialized]\n        if(mem == -1) mem = NULL; //sbrk error\n           ^~~\nalloc.c:20:17: note: initialize the variable 'mem' to silence this warning\n        memNode_t * mem;\n                       ^\n                        = NULL\nalloc.c:55:12: error: incomplete type 'void' is not assignable\n                mem[i] = (char) 0;\n                ~~~~~~ ^\nalloc.c:107:17: warning: unused parameter 'ptr' [-Wunused-parameter]\nvoid free(void *ptr) {\n                ^\nalloc.c:156:21: warning: unused parameter 'ptr' [-Wunused-parameter]\nvoid *realloc(void *ptr, size_t size) {\n                    ^\nalloc.c:156:33: warning: unused parameter 'size' [-Wunused-parameter]\nvoid *realloc(void *ptr, size_t size) {\n                                ^\n4 warnings and 3 errors generated.\nmake: *** [alloc.so] Error 1\n"
+      }, 
+      {
+        "ptsPossible": 1.0, 
+        "ptsEarned": 0.0, 
+        "description": "./mcontest testers_exe/tester-2 (timeout 60 seconds)", 
+        "name": "part1_tester-2", 
+        "log": "Trying to compile your code...\nFAILED TO COMPILE!\nalloc.c:22:9: error: comparison between pointer and integer ('memNode_t *' (aka 'struct memNode *') and 'int') [-Werror]\n        if(mem == -1) mem = NULL; //sbrk error\n           ~~~ ^  ~~\nalloc.c:19:35: warning: unused parameter 'size' [-Wunused-parameter]\nmemNode_t * memNode_create(size_t size) {\n                                  ^\nalloc.c:22:5: error: variable 'mem' is uninitialized when used here [-Werror,-Wuninitialized]\n        if(mem == -1) mem = NULL; //sbrk error\n           ^~~\nalloc.c:20:17: note: initialize the variable 'mem' to silence this warning\n        memNode_t * mem;\n                       ^\n                        = NULL\nalloc.c:55:12: error: incomplete type 'void' is not assignable\n                mem[i] = (char) 0;\n                ~~~~~~ ^\nalloc.c:107:17: warning: unused parameter 'ptr' [-Wunused-parameter]\nvoid free(void *ptr) {\n                ^\nalloc.c:156:21: warning: unused parameter 'ptr' [-Wunused-parameter]\nvoid *realloc(void *ptr, size_t size) {\n                    ^\nalloc.c:156:33: warning: unused parameter 'size' [-Wunused-parameter]\nvoid *realloc(void *ptr, size_t size) {\n                                ^\n4 warnings and 3 errors generated.\nmake: *** [alloc.so] Error 1\n"
+      }, 
+      {
+        "ptsPossible": 1.0, 
+        "ptsEarned": 0.0, 
+        "description": "./mcontest testers_exe/tester-3 (timeout 60 seconds)", 
+        "name": "part1_tester-3", 
+        "log": "Trying to compile your code...\nFAILED TO COMPILE!\nalloc.c:22:9: error: comparison between pointer and integer ('memNode_t *' (aka 'struct memNode *') and 'int') [-Werror]\n        if(mem == -1) mem = NULL; //sbrk error\n           ~~~ ^  ~~\nalloc.c:19:35: warning: unused parameter 'size' [-Wunused-parameter]\nmemNode_t * memNode_create(size_t size) {\n                                  ^\nalloc.c:22:5: error: variable 'mem' is uninitialized when used here [-Werror,-Wuninitialized]\n        if(mem == -1) mem = NULL; //sbrk error\n           ^~~\nalloc.c:20:17: note: initialize the variable 'mem' to silence this warning\n        memNode_t * mem;\n                       ^\n                        = NULL\nalloc.c:55:12: error: incomplete type 'void' is not assignable\n                mem[i] = (char) 0;\n                ~~~~~~ ^\nalloc.c:107:17: warning: unused parameter 'ptr' [-Wunused-parameter]\nvoid free(void *ptr) {\n                ^\nalloc.c:156:21: warning: unused parameter 'ptr' [-Wunused-parameter]\nvoid *realloc(void *ptr, size_t size) {\n                    ^\nalloc.c:156:33: warning: unused parameter 'size' [-Wunused-parameter]\nvoid *realloc(void *ptr, size_t size) {\n                                ^\n4 warnings and 3 errors generated.\nmake: *** [alloc.so] Error 1\n"
+      }, 
+      {
+        "ptsPossible": 1.0, 
+        "ptsEarned": 0.0, 
+        "description": "./mcontest testers_exe/tester-4 (timeout 60 seconds)", 
+        "name": "part1_tester-4", 
+        "log": "Trying to compile your code...\nFAILED TO COMPILE!\nalloc.c:22:9: error: comparison between pointer and integer ('memNode_t *' (aka 'struct memNode *') and 'int') [-Werror]\n        if(mem == -1) mem = NULL; //sbrk error\n           ~~~ ^  ~~\nalloc.c:19:35: warning: unused parameter 'size' [-Wunused-parameter]\nmemNode_t * memNode_create(size_t size) {\n                                  ^\nalloc.c:22:5: error: variable 'mem' is uninitialized when used here [-Werror,-Wuninitialized]\n        if(mem == -1) mem = NULL; //sbrk error\n           ^~~\nalloc.c:20:17: note: initialize the variable 'mem' to silence this warning\n        memNode_t * mem;\n                       ^\n                        = NULL\nalloc.c:55:12: error: incomplete type 'void' is not assignable\n                mem[i] = (char) 0;\n                ~~~~~~ ^\nalloc.c:107:17: warning: unused parameter 'ptr' [-Wunused-parameter]\nvoid free(void *ptr) {\n                ^\nalloc.c:156:21: warning: unused parameter 'ptr' [-Wunused-parameter]\nvoid *realloc(void *ptr, size_t size) {\n                    ^\nalloc.c:156:33: warning: unused parameter 'size' [-Wunused-parameter]\nvoid *realloc(void *ptr, size_t size) {\n                                ^\n4 warnings and 3 errors generated.\nmake: *** [alloc.so] Error 1\n"
+      }, 
+      {
+        "ptsPossible": 1.0, 
+        "ptsEarned": 0.0, 
+        "description": "./mcontest testers_exe/tester-5 (timeout 60 seconds)", 
+        "name": "part1_tester-5", 
+        "log": "Trying to compile your code...\nFAILED TO COMPILE!\nalloc.c:22:9: error: comparison between pointer and integer ('memNode_t *' (aka 'struct memNode *') and 'int') [-Werror]\n        if(mem == -1) mem = NULL; //sbrk error\n           ~~~ ^  ~~\nalloc.c:19:35: warning: unused parameter 'size' [-Wunused-parameter]\nmemNode_t * memNode_create(size_t size) {\n                                  ^\nalloc.c:22:5: error: variable 'mem' is uninitialized when used here [-Werror,-Wuninitialized]\n        if(mem == -1) mem = NULL; //sbrk error\n           ^~~\nalloc.c:20:17: note: initialize the variable 'mem' to silence this warning\n        memNode_t * mem;\n                       ^\n                        = NULL\nalloc.c:55:12: error: incomplete type 'void' is not assignable\n                mem[i] = (char) 0;\n                ~~~~~~ ^\nalloc.c:107:17: warning: unused parameter 'ptr' [-Wunused-parameter]\nvoid free(void *ptr) {\n                ^\nalloc.c:156:21: warning: unused parameter 'ptr' [-Wunused-parameter]\nvoid *realloc(void *ptr, size_t size) {\n                    ^\nalloc.c:156:33: warning: unused parameter 'size' [-Wunused-parameter]\nvoid *realloc(void *ptr, size_t size) {\n                                ^\n4 warnings and 3 errors generated.\nmake: *** [alloc.so] Error 1\n"
+      }, 
+      {
+        "ptsPossible": 1.0, 
+        "ptsEarned": 0.0, 
+        "description": "./mcontest testers_exe/tester-6 (timeout 60 seconds)", 
+        "name": "part1_tester-6", 
+        "log": "Trying to compile your code...\nFAILED TO COMPILE!\nalloc.c:22:9: error: comparison between pointer and integer ('memNode_t *' (aka 'struct memNode *') and 'int') [-Werror]\n        if(mem == -1) mem = NULL; //sbrk error\n           ~~~ ^  ~~\nalloc.c:19:35: warning: unused parameter 'size' [-Wunused-parameter]\nmemNode_t * memNode_create(size_t size) {\n                                  ^\nalloc.c:22:5: error: variable 'mem' is uninitialized when used here [-Werror,-Wuninitialized]\n        if(mem == -1) mem = NULL; //sbrk error\n           ^~~\nalloc.c:20:17: note: initialize the variable 'mem' to silence this warning\n        memNode_t * mem;\n                       ^\n                        = NULL\nalloc.c:55:12: error: incomplete type 'void' is not assignable\n                mem[i] = (char) 0;\n                ~~~~~~ ^\nalloc.c:107:17: warning: unused parameter 'ptr' [-Wunused-parameter]\nvoid free(void *ptr) {\n                ^\nalloc.c:156:21: warning: unused parameter 'ptr' [-Wunused-parameter]\nvoid *realloc(void *ptr, size_t size) {\n                    ^\nalloc.c:156:33: warning: unused parameter 'size' [-Wunused-parameter]\nvoid *realloc(void *ptr, size_t size) {\n                                ^\n4 warnings and 3 errors generated.\nmake: *** [alloc.so] Error 1\n"
+      }
+    ], 
+    "revision": "38908", 
+    "checksum": "bc285021b855938eaacb9e6a0ec33938e3f64f0e  alloc.c\n3898a7074248d1ef0532795256423c994b3d5b77  nickname.txt"
+  }, 
+  {
+    "timestamp": "2016-10-02 22:00:00.575781", 
+    "testcases": [
+      {
+        "description": "./mcontest testers_exe/tester-1 (timeout 60 seconds)", 
+        "ptsEarned": 0.0, 
+        "log": "Trying to compile your code...\nSuccessfully compiled your code..\nFailed the test\n\nstdout:\n[mcontest]: STATUS: FAILED=(11)\n[mcontest]: MAX: 36\n[mcontest]: AVG: 36.000000\n[mcontest]: TIME: 0.000000\n\n\nstderr:\n", 
+        "name": "part1_tester-1", 
+        "ptsPossible": 1.0
+      }, 
+      {
+        "description": "./mcontest testers_exe/tester-2 (timeout 60 seconds)", 
+        "ptsEarned": 0.0, 
+        "log": "Trying to compile your code...\nSuccessfully compiled your code..\nFailed the test\n\nstdout:\n[mcontest]: STATUS: FAILED=(11)\n[mcontest]: MAX: 230686785\n[mcontest]: AVG: 136314919.000004\n[mcontest]: TIME: 0.572000\n\n\nstderr:\n", 
+        "name": "part1_tester-2", 
+        "ptsPossible": 1.0
+      }, 
+      {
+        "description": "./mcontest testers_exe/tester-3 (timeout 60 seconds)", 
+        "ptsEarned": 0.0, 
+        "log": "Trying to compile your code...\nSuccessfully compiled your code..\nFailed the test\n\nstdout:\n[mcontest]: STATUS: FAILED=(11)\n[mcontest]: MAX: 1048641\n[mcontest]: AVG: 524337.000000\n[mcontest]: TIME: 0.000000\n\n\nstderr:\n", 
+        "name": "part1_tester-3", 
+        "ptsPossible": 1.0
+      }, 
+      {
+        "description": "./mcontest testers_exe/tester-4 (timeout 60 seconds)", 
+        "ptsEarned": 0.0, 
+        "log": "Trying to compile your code...\nSuccessfully compiled your code..\nFailed the test\n\nstdout:\n[mcontest]: STATUS: FAILED=(11)\n[mcontest]: MAX: 1073741889\n[mcontest]: AVG: 536870961.000000\n[mcontest]: TIME: 0.000000\n\n\nstderr:\n", 
+        "name": "part1_tester-4", 
+        "ptsPossible": 1.0
+      }, 
+      {
+        "description": "./mcontest testers_exe/tester-5 (timeout 60 seconds)", 
+        "ptsEarned": 0.0, 
+        "log": "Trying to compile your code...\nSuccessfully compiled your code..\nFailed the test\n\nstdout:\n[mcontest]: STATUS: FAILED=(11)\n[mcontest]: MAX: 4899665\n[mcontest]: AVG: 3224965.000000\n[mcontest]: TIME: 0.000000\n\n\nstderr:\n", 
+        "name": "part1_tester-5", 
+        "ptsPossible": 1.0
+      }, 
+      {
+        "description": "./mcontest testers_exe/tester-6 (timeout 60 seconds)", 
+        "ptsEarned": 0.0, 
+        "log": "Trying to compile your code...\nSuccessfully compiled your code..\nFailed the test\n\nstdout:\n[mcontest]: STATUS: FAILED=(11)\n[mcontest]: MAX: 1073741889\n[mcontest]: AVG: 536870961.000000\n[mcontest]: TIME: 0.192000\n\n\nstderr:\n", 
+        "name": "part1_tester-6", 
+        "ptsPossible": 1.0
+      }
+    ], 
+    "checksum": "ac6b9eb958e54656dfc579efedfc52c21ed065d5  alloc.c\n3898a7074248d1ef0532795256423c994b3d5b77  nickname.txt", 
+    "revision": "39221"
+  }, 
+  {
+    "timestamp": "2016-10-03 12:00:00.608271", 
+    "testcases": [
+      {
+        "log": "Trying to compile your code...\nSuccessfully compiled your code..\nFailed the test\n\nstdout:\n[mcontest]: STATUS: FAILED=(11)\n[mcontest]: MAX: 36\n[mcontest]: AVG: 36.000000\n[mcontest]: TIME: 0.000000\n\n\nstderr:\n", 
+        "ptsEarned": 0.0, 
+        "ptsPossible": 1.0, 
+        "name": "part1_tester-1", 
+        "description": "./mcontest testers_exe/tester-1 (timeout 60 seconds)"
+      }, 
+      {
+        "log": "Trying to compile your code...\nSuccessfully compiled your code..\nFailed the test\n\nstdout:\n[mcontest]: STATUS: FAILED=(11)\n[mcontest]: MAX: 230686785\n[mcontest]: AVG: 136314919.000004\n[mcontest]: TIME: 0.572000\n\n\nstderr:\n", 
+        "ptsEarned": 0.0, 
+        "ptsPossible": 1.0, 
+        "name": "part1_tester-2", 
+        "description": "./mcontest testers_exe/tester-2 (timeout 60 seconds)"
+      }, 
+      {
+        "log": "Trying to compile your code...\nSuccessfully compiled your code..\nFailed the test\n\nstdout:\n[mcontest]: STATUS: FAILED=(11)\n[mcontest]: MAX: 1048641\n[mcontest]: AVG: 524337.000000\n[mcontest]: TIME: 0.000000\n\n\nstderr:\n", 
+        "ptsEarned": 0.0, 
+        "ptsPossible": 1.0, 
+        "name": "part1_tester-3", 
+        "description": "./mcontest testers_exe/tester-3 (timeout 60 seconds)"
+      }, 
+      {
+        "log": "Trying to compile your code...\nSuccessfully compiled your code..\nFailed the test\n\nstdout:\n[mcontest]: STATUS: FAILED=(11)\n[mcontest]: MAX: 1073741889\n[mcontest]: AVG: 536870961.000000\n[mcontest]: TIME: 0.000000\n\n\nstderr:\n", 
+        "ptsEarned": 0.0, 
+        "ptsPossible": 1.0, 
+        "name": "part1_tester-4", 
+        "description": "./mcontest testers_exe/tester-4 (timeout 60 seconds)"
+      }, 
+      {
+        "log": "Trying to compile your code...\nSuccessfully compiled your code..\nFailed the test\n\nstdout:\n[mcontest]: STATUS: FAILED=(11)\n[mcontest]: MAX: 4899665\n[mcontest]: AVG: 3224965.000000\n[mcontest]: TIME: 0.000000\n\n\nstderr:\n", 
+        "ptsEarned": 0.0, 
+        "ptsPossible": 1.0, 
+        "name": "part1_tester-5", 
+        "description": "./mcontest testers_exe/tester-5 (timeout 60 seconds)"
+      }, 
+      {
+        "log": "Trying to compile your code...\nSuccessfully compiled your code..\nFailed the test\n\nstdout:\n[mcontest]: STATUS: FAILED=(11)\n[mcontest]: MAX: 1073741889\n[mcontest]: AVG: 536870961.000000\n[mcontest]: TIME: 0.192000\n\n\nstderr:\n", 
+        "ptsEarned": 0.0, 
+        "ptsPossible": 1.0, 
+        "name": "part1_tester-6", 
+        "description": "./mcontest testers_exe/tester-6 (timeout 60 seconds)"
+      }
+    ], 
+    "revision": "39866", 
+    "checksum": "ac6b9eb958e54656dfc579efedfc52c21ed065d5  alloc.c\n3898a7074248d1ef0532795256423c994b3d5b77  nickname.txt"
+  }, 
+  {
+    "timestamp": "2016-10-04 10:32:53.258876", 
+    "testcases": [
+      {
+        "ptsPossible": 1.0, 
+        "ptsEarned": 1.0, 
+        "description": "./mcontest testers_exe/tester-1 (timeout 60 seconds)", 
+        "name": "part1_tester-1", 
+        "log": "Trying to compile your code...\nSuccessfully compiled your code..\n\nstdout:\nMemory was allocated, used, and freed!\n[mcontest]: STATUS: OK\n[mcontest]: MAX: 4164\n[mcontest]: AVG: 36.000206\n[mcontest]: TIME: 0.348000\n\n\nstderr:\n"
+      }, 
+      {
+        "ptsPossible": 1.0, 
+        "ptsEarned": 0.0, 
+        "description": "./mcontest testers_exe/tester-2 (timeout 60 seconds)", 
+        "name": "part1_tester-2", 
+        "log": "Trying to compile your code...\nSuccessfully compiled your code..\nFailed the test\n\nstdout:\nSending a SIGTERM to kill the child process (pid=6860) for running for over 30sec.\n[mcontest]: STATUS: FAILED=(15)\n[mcontest]: MAX: 46156077\n[mcontest]: AVG: 44049214.601347\n[mcontest]: TIME: 29.996000\n\n\nstderr:\n"
+      }, 
+      {
+        "ptsPossible": 1.0, 
+        "ptsEarned": 1.0, 
+        "description": "./mcontest testers_exe/tester-3 (timeout 60 seconds)", 
+        "name": "part1_tester-3", 
+        "log": "Trying to compile your code...\nSuccessfully compiled your code..\n\nstdout:\nMemory was allocated and freed!\n[mcontest]: STATUS: OK\n[mcontest]: MAX: 1048641\n[mcontest]: AVG: 1048553.630562\n[mcontest]: TIME: 0.316000\n\n\nstderr:\n"
+      }, 
+      {
+        "ptsPossible": 1.0, 
+        "ptsEarned": 1.0, 
+        "description": "./mcontest testers_exe/tester-4 (timeout 60 seconds)", 
+        "name": "part1_tester-4", 
+        "log": "Trying to compile your code...\nSuccessfully compiled your code..\n\nstdout:\nMemory was allocated, used, and freed!\n[mcontest]: STATUS: OK\n[mcontest]: MAX: 1073741889\n[mcontest]: AVG: 1073741632.997429\n[mcontest]: TIME: 0.292000\n\n\nstderr:\n"
+      }, 
+      {
+        "ptsPossible": 1.0, 
+        "ptsEarned": 0.0, 
+        "description": "./mcontest testers_exe/tester-5 (timeout 60 seconds)", 
+        "name": "part1_tester-5", 
+        "log": "Trying to compile your code...\nSuccessfully compiled your code..\nFailed the test\n\nstdout:\n[mcontest]: STATUS: FAILED=(11)\n[mcontest]: MAX: 17019896\n[mcontest]: AVG: 11335385.026629\n[mcontest]: TIME: 0.028000\n\n\nstderr:\n"
+      }, 
+      {
+        "ptsPossible": 1.0, 
+        "ptsEarned": 0.0, 
+        "description": "./mcontest testers_exe/tester-6 (timeout 60 seconds)", 
+        "name": "part1_tester-6", 
+        "log": "Trying to compile your code...\nSuccessfully compiled your code..\nFailed the test\n\nstdout:\n[mcontest]: STATUS: FAILED=(11)\n[mcontest]: MAX: 1431655862\n[mcontest]: AVG: 1322725525.130435\n[mcontest]: TIME: 4.732000\n\n\nstderr:\n"
+      }
+    ], 
+    "checksum": "7f01b836a8f02da8f7b0f2f849c76bacb7cebe99  alloc.c\n3898a7074248d1ef0532795256423c994b3d5b77  nickname.txt", 
+    "revision": "41738"
+  }, 
+  {
+    "timestamp": "2016-10-04 22:00:00.129693", 
+    "testcases": [
+      {
+        "description": "./mcontest testers_exe/tester-1 (timeout 60 seconds)", 
+        "ptsEarned": 1.0, 
+        "log": "Trying to compile your code...\nSuccessfully compiled your code..\n\nstdout:\nMemory was allocated, used, and freed!\n[mcontest]: STATUS: OK\n[mcontest]: MAX: 240004164\n[mcontest]: AVG: 120000042.000206\n[mcontest]: TIME: 1.240000\n\n\nstderr:\n", 
+        "name": "part2_tester-1", 
+        "ptsPossible": 1.0
+      }, 
+      {
+        "description": "./mcontest testers_exe/tester-2 (timeout 60 seconds)", 
+        "ptsEarned": 1.0, 
+        "log": "Trying to compile your code...\nSuccessfully compiled your code..\n\nstdout:\nMemory was allocated, used, and freed!\n[mcontest]: STATUS: OK\n[mcontest]: MAX: 356515953\n[mcontest]: AVG: 214958150.000002\n[mcontest]: TIME: 1.156000\n\n\nstderr:\n", 
+        "name": "part2_tester-2", 
+        "ptsPossible": 1.0
+      }, 
+      {
+        "description": "./mcontest testers_exe/tester-3 (timeout 60 seconds)", 
+        "ptsEarned": 1.0, 
+        "log": "Trying to compile your code...\nSuccessfully compiled your code..\n\nstdout:\nMemory was allocated and freed!\n[mcontest]: STATUS: OK\n[mcontest]: MAX: 1192665\n[mcontest]: AVG: 1120553.632561\n[mcontest]: TIME: 0.320000\n\n\nstderr:\n", 
+        "name": "part2_tester-3", 
+        "ptsPossible": 1.0
+      }, 
+      {
+        "description": "./mcontest testers_exe/tester-4 (timeout 60 seconds)", 
+        "ptsEarned": 1.0, 
+        "log": "Trying to compile your code...\nSuccessfully compiled your code..\n\nstdout:\nMemory was allocated, used, and freed!\n[mcontest]: STATUS: OK\n[mcontest]: MAX: 1174400025\n[mcontest]: AVG: 1124072309.011871\n[mcontest]: TIME: 0.840000\n\n\nstderr:\n", 
+        "name": "part2_tester-4", 
+        "ptsPossible": 1.0
+      }, 
+      {
+        "description": "./mcontest testers_exe/tester-5 (timeout 60 seconds)", 
+        "ptsEarned": 0.0, 
+        "log": "Trying to compile your code...\nSuccessfully compiled your code..\nFailed the test\n\nstdout:\n[mcontest]: STATUS: FAILED=(11)\n[mcontest]: MAX: 15458685\n[mcontest]: AVG: 10177336.241952\n[mcontest]: TIME: 0.004000\n\n\nstderr:\n", 
+        "name": "part2_tester-5", 
+        "ptsPossible": 1.0
+      }, 
+      {
+        "description": "./mcontest testers_exe/tester-6 (timeout 60 seconds)", 
+        "ptsEarned": 0.0, 
+        "log": "Trying to compile your code...\nSuccessfully compiled your code..\nFailed the test\n\nstdout:\n[mcontest]: STATUS: FAILED=(11)\n[mcontest]: MAX: 1968527310\n[mcontest]: AVG: 1395864707.280000\n[mcontest]: TIME: 7.320000\n\n\nstderr:\n", 
+        "name": "part2_tester-6", 
+        "ptsPossible": 1.0
+      }, 
+      {
+        "description": "./mcontest testers_exe/tester-7 (timeout 60 seconds)", 
+        "ptsEarned": 1.0, 
+        "log": "Trying to compile your code...\nSuccessfully compiled your code..\n\nstdout:\nMemory was allocated and freed!\n[mcontest]: STATUS: OK\n[mcontest]: MAX: 1431656318\n[mcontest]: AVG: 1327264499.166667\n[mcontest]: TIME: 3.200000\n\n\nstderr:\n", 
+        "name": "part2_tester-7", 
+        "ptsPossible": 1.0
+      }, 
+      {
+        "description": "./mcontest testers_exe/tester-8 (timeout 60 seconds)", 
+        "ptsEarned": 0.0, 
+        "log": "Trying to compile your code...\nSuccessfully compiled your code..\nFailed the test\n\nstdout:\n[mcontest]: STATUS: FAILED=(17408)\n[mcontest]: MAX: 2863312123\n[mcontest]: AVG: 1546188544.200000\n[mcontest]: TIME: 4.392000\n\n\nstderr:\nExceeded Memory Limit (2684354560)\n", 
+        "name": "part2_tester-8", 
+        "ptsPossible": 1.0
+      }, 
+      {
+        "description": "./mcontest testers_exe/tester-9 (timeout 60 seconds)", 
+        "ptsEarned": 0.0, 
+        "log": "Trying to compile your code...\nSuccessfully compiled your code..\nFailed the test\n\nstdout:\n[mcontest]: STATUS: FAILED=(11)\n[mcontest]: MAX: 2244505\n[mcontest]: AVG: 1804709.380054\n[mcontest]: TIME: 0.000000\n\n\nstderr:\n", 
+        "name": "part2_tester-9", 
+        "ptsPossible": 1.0
+      }, 
+      {
+        "description": "./mcontest testers_exe/tester-10 (timeout 60 seconds)", 
+        "ptsEarned": 0.0, 
+        "log": "Trying to compile your code...\nSuccessfully compiled your code..\nFailed the test\n\nstdout:\n[mcontest]: STATUS: FAILED=(17408)\n[mcontest]: MAX: 2818587418\n[mcontest]: AVG: 1723418067.967789\n[mcontest]: TIME: 0.000000\n\n\nstderr:\nExceeded Memory Limit (2684354560)\n", 
+        "name": "part2_tester-10", 
+        "ptsPossible": 1.0
+      }, 
+      {
+        "description": "./mcontest testers_exe/tester-10 (timeout 60 seconds)", 
+        "ptsEarned": 0.0, 
+        "log": "Trying to compile your code...\nSuccessfully compiled your code..\nFailed the test\n\nstdout:\n[mcontest]: STATUS: FAILED=(17408)\n[mcontest]: MAX: 4294967513\n[mcontest]: AVG: 1840700381.571429\n[mcontest]: TIME: 0.000000\n\n\nstderr:\nExceeded Memory Limit (2684354560)\n", 
+        "name": "part2_tester-11", 
+        "ptsPossible": 1.0
+      }
+    ], 
+    "revision": "42600", 
+    "checksum": "de920b448532ad90ace05f3d9ea895bd475c7c90  alloc.c\n3898a7074248d1ef0532795256423c994b3d5b77  nickname.txt"
+  }, 
+  {
+    "timestamp": "2016-10-05 22:00:00.588316", 
+    "testcases": [
+      {
+        "log": "Trying to compile your code...\nSuccessfully compiled your code..\n\nstdout:\nMemory was allocated, used, and freed!\n[mcontest]: STATUS: OK\n[mcontest]: MAX: 240004164\n[mcontest]: AVG: 120000042.000206\n[mcontest]: TIME: 1.252000\n\n\nstderr:\n", 
+        "ptsPossible": 1.0, 
+        "ptsEarned": 1.0, 
+        "name": "part2_tester-1", 
+        "description": "./mcontest testers_exe/tester-1 (timeout 60 seconds)"
+      }, 
+      {
+        "log": "Trying to compile your code...\nSuccessfully compiled your code..\n\nstdout:\nMemory was allocated, used, and freed!\n[mcontest]: STATUS: OK\n[mcontest]: MAX: 356515953\n[mcontest]: AVG: 214958150.000002\n[mcontest]: TIME: 1.144000\n\n\nstderr:\n", 
+        "ptsPossible": 1.0, 
+        "ptsEarned": 1.0, 
+        "name": "part2_tester-2", 
+        "description": "./mcontest testers_exe/tester-2 (timeout 60 seconds)"
+      }, 
+      {
+        "log": "Trying to compile your code...\nSuccessfully compiled your code..\n\nstdout:\nMemory was allocated and freed!\n[mcontest]: STATUS: OK\n[mcontest]: MAX: 1192665\n[mcontest]: AVG: 1120553.632561\n[mcontest]: TIME: 0.316000\n\n\nstderr:\n", 
+        "ptsPossible": 1.0, 
+        "ptsEarned": 1.0, 
+        "name": "part2_tester-3", 
+        "description": "./mcontest testers_exe/tester-3 (timeout 60 seconds)"
+      }, 
+      {
+        "log": "Trying to compile your code...\nSuccessfully compiled your code..\n\nstdout:\nMemory was allocated, used, and freed!\n[mcontest]: STATUS: OK\n[mcontest]: MAX: 1174400025\n[mcontest]: AVG: 1124072309.011871\n[mcontest]: TIME: 0.820000\n\n\nstderr:\n", 
+        "ptsPossible": 1.0, 
+        "ptsEarned": 1.0, 
+        "name": "part2_tester-4", 
+        "description": "./mcontest testers_exe/tester-4 (timeout 60 seconds)"
+      }, 
+      {
+        "log": "Trying to compile your code...\nSuccessfully compiled your code..\nFailed the test\n\nstdout:\n[mcontest]: STATUS: FAILED=(11)\n[mcontest]: MAX: 15458685\n[mcontest]: AVG: 10177336.241952\n[mcontest]: TIME: 0.004000\n\n\nstderr:\n", 
+        "ptsPossible": 1.0, 
+        "ptsEarned": 0.0, 
+        "name": "part2_tester-5", 
+        "description": "./mcontest testers_exe/tester-5 (timeout 60 seconds)"
+      }, 
+      {
+        "log": "Trying to compile your code...\nSuccessfully compiled your code..\nFailed the test\n\nstdout:\n[mcontest]: STATUS: FAILED=(11)\n[mcontest]: MAX: 1968527310\n[mcontest]: AVG: 1395864707.280000\n[mcontest]: TIME: 7.228000\n\n\nstderr:\n", 
+        "ptsPossible": 1.0, 
+        "ptsEarned": 0.0, 
+        "name": "part2_tester-6", 
+        "description": "./mcontest testers_exe/tester-6 (timeout 60 seconds)"
+      }, 
+      {
+        "log": "Trying to compile your code...\nSuccessfully compiled your code..\n\nstdout:\nMemory was allocated and freed!\n[mcontest]: STATUS: OK\n[mcontest]: MAX: 1431656318\n[mcontest]: AVG: 1327264499.166667\n[mcontest]: TIME: 3.192000\n\n\nstderr:\n", 
+        "ptsPossible": 1.0, 
+        "ptsEarned": 1.0, 
+        "name": "part2_tester-7", 
+        "description": "./mcontest testers_exe/tester-7 (timeout 60 seconds)"
+      }, 
+      {
+        "log": "Trying to compile your code...\nSuccessfully compiled your code..\nFailed the test\n\nstdout:\n[mcontest]: STATUS: FAILED=(17408)\n[mcontest]: MAX: 2863312123\n[mcontest]: AVG: 1546188544.200000\n[mcontest]: TIME: 4.384000\n\n\nstderr:\nExceeded Memory Limit (2684354560)\n", 
+        "ptsPossible": 1.0, 
+        "ptsEarned": 0.0, 
+        "name": "part2_tester-8", 
+        "description": "./mcontest testers_exe/tester-8 (timeout 60 seconds)"
+      }, 
+      {
+        "log": "Trying to compile your code...\nSuccessfully compiled your code..\nFailed the test\n\nstdout:\n[mcontest]: STATUS: FAILED=(11)\n[mcontest]: MAX: 2244505\n[mcontest]: AVG: 1804709.380054\n[mcontest]: TIME: 0.000000\n\n\nstderr:\n", 
+        "ptsPossible": 1.0, 
+        "ptsEarned": 0.0, 
+        "name": "part2_tester-9", 
+        "description": "./mcontest testers_exe/tester-9 (timeout 60 seconds)"
+      }, 
+      {
+        "log": "Trying to compile your code...\nSuccessfully compiled your code..\nFailed the test\n\nstdout:\n[mcontest]: STATUS: FAILED=(17408)\n[mcontest]: MAX: 2818587418\n[mcontest]: AVG: 1723418067.967789\n[mcontest]: TIME: 0.000000\n\n\nstderr:\nExceeded Memory Limit (2684354560)\n", 
+        "ptsPossible": 1.0, 
+        "ptsEarned": 0.0, 
+        "name": "part2_tester-10", 
+        "description": "./mcontest testers_exe/tester-10 (timeout 60 seconds)"
+      }, 
+      {
+        "log": "Trying to compile your code...\nSuccessfully compiled your code..\nFailed the test\n\nstdout:\n[mcontest]: STATUS: FAILED=(17408)\n[mcontest]: MAX: 4294967513\n[mcontest]: AVG: 1840700381.571429\n[mcontest]: TIME: 0.000000\n\n\nstderr:\nExceeded Memory Limit (2684354560)\n", 
+        "ptsPossible": 1.0, 
+        "ptsEarned": 0.0, 
+        "name": "part2_tester-11", 
+        "description": "./mcontest testers_exe/tester-10 (timeout 60 seconds)"
+      }
+    ], 
+    "checksum": "de920b448532ad90ace05f3d9ea895bd475c7c90  alloc.c\n3898a7074248d1ef0532795256423c994b3d5b77  nickname.txt", 
+    "revision": "44036"
+  }
+]

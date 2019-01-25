@@ -1,0 +1,158 @@
+/**
+ * Machine Problem: Password Cracker
+ * CS 241 - Fall 2016
+ */
+
+#include "cracker2.h"
+#include "format.h"
+#include "utils.h"
+#include "thread_status.h" //For thread debugging
+#include <stdint.h> //for intptr_t
+#include <pthread.h>
+#include <crypt.h> //for crypt_r
+#include <stdlib.h>
+#include <stdio.h>
+
+//Allows for thread-safe reading and writing.
+// One must pass in the non-thread safe reading and writing functions.
+typedef struct rwinfo { //necessary vars. for the reader-writer problem
+	pthread_mutex_t m;
+	pthread_cond_t rcv; //for readers
+	pthread_cond_t wcv; //for writers
+	int writers; //# writers waiting to write
+	int readers; //# readers reading
+	short writing; //boolean
+	short reading;
+} rwinfo_t;
+
+rwinfo_t * rwinfo_init() {
+	rwinfo_t * rwinfo = malloc(sizeof(rwinfo_t));
+	pthread_mutex_init(&rwinfo->m, NULL);
+	pthread_cond_init(&rwinfo->rcv, NULL);
+	pthread_cond_init(&rwinfo->wcv, NULL);
+	rwinfo->writers = 0;
+	rwinfo->readers = 0;
+	rwinfo->writing = 0;
+	rwinfo->reading = 0;
+	return rwinfo;
+}
+
+//Writer priority
+void* safeReader(rwinfo_t * rwinfo, void* (*readFxn)(void*), void* arg) {
+	pthread_mutex_lock(&rwinfo->m);
+	while(rwinfo->writers) pthread_cond_wait(&rwinfo->rcv, &rwinfo->m);
+	rwinfo->reading = 1;
+	rwinfo->readers++;
+	pthread_mutex_unlock(&rwinfo->m);
+	//Now call the reading fxn., readFxn
+	void* toReturn = readFxn(arg);
+	pthread_mutex_lock(&rwinfo->m);
+	rwinfo->reading = 0;
+	rwinfo->readers--;
+	if(rwinfo->writers) pthread_cond_signal(&rwinfo->wcv);
+	pthread_mutex_unlock(&rwinfo->m);
+	return toReturn;
+}
+
+//Writer priority
+void * safeWriter(rwinfo_t * rwinfo, void* (*writeFxn)(void*), void* arg) {
+	pthread_mutex_lock(&rwinfo->m);
+	rwinfo->writers++;
+	while(rwinfo->reading || rwinfo->writing) pthread_cond_wait(&rwinfo->wcv, &rwinfo->m);
+	rwinfo->writing = 1;
+	pthread_mutex_unlock(&rwinfo->m);
+	//Now call the writing fxn., writeFxn
+	void* toReturn = writeFxn(arg);
+	pthread_mutex_lock(&rwinfo->m);
+	rwinfo->writing = 0;
+	rwinfo->writers--;
+	if(rwinfo->writers) pthread_cond_signal(&rwinfo->wcv);
+	else pthread_cond_broadcast(&rwinfo->rcv);
+	pthread_mutex_unlock(&rwinfo->m);
+	return toReturn;
+}
+
+rwinfo_t * rwinfo = NULL;
+int done = 0;
+size_t numThreads = 0;
+pthread_barrier_t barrier_read; //for making sure no worker thread starts a new task until main has read and parsed one, and if DNE, writes signal (done) for workers to quit 
+pthread_barrier_t barrier_sync; //for making sure no worker thread continues until all have finished their partition of the work
+
+void* readDone(void* isNull) { //NEEDS to be used thread-safely! Use safeReader
+	isNull = isNull;
+	return (void*) ((intptr_t) done);
+}
+
+void* setDone(void* isNull) { //NEEDS to be used thread-safely! Use safeWriter
+	isNull = isNull;
+	done = 1;
+	return NULL;
+}
+
+void* crack(void* args) {
+	threadStatusSet("initializing...");
+	int id = (int) ((intptr_t) args);
+	//When a thread starts processing a task, it should print v2_print_thread_start(int threadId, char *username, long offset, char *startPassword)
+	while(1) {
+		pthread_barrier_wait(&barrier_read); //wait for main to have another task ready
+		if(done) break; //don't think need safeReader below b/c main can't change done until all worker threads done w/ cur task.
+		//int done = (int) ((intptr_t) safeReader(rwinfo, readDone, NULL););
+		//TODO: Crack, and print outputs
+		
+		//TODO: In helper fxn: When a worker thread finds the correct password, it should tell all the other threads to stop working on the task!! Need another boolean to indicate done w/ cur pass.
+		//		-Have threads check for this in the fxn where they try all possibilities, NOT here.
+		
+		pthread_barrier_wait(&barrier_sync); //wait for all worker threads to be done w/ cur task
+	}
+	return NULL; //don't think we need ret. val this time
+}
+
+int start(size_t thread_count) {
+	rwinfo = rwinfo_init();
+	pthread_barrier_init(&barrier_read, NULL, thread_count+1); //barrier for all worker threads and main
+	pthread_barrier_init(&barrier_sync, NULL, thread_count+1); //barrier for all worker threads and main
+	
+	numThreads = thread_count;
+  	pthread_t tids[thread_count];
+	for(int i = 0; i < (int) thread_count; i++) {
+		pthread_create(&tids[i], NULL, crack, (void*) ((intptr_t) (i+1)));
+	}
+	//When the main thread first reads a task, it should print v2_print_start_user(char *username)
+	//2. Now read tasks:
+	short start = 1;
+	size_t capacity = 0;
+	ssize_t result = 1;
+	while(result > 0) {
+		char * buf = NULL;
+  		result = getline(&buf, &capacity, stdin);
+  		if(result > 0 && buf[result-1]=='\n') {
+  			buf[result-1] = '\0'; //replace terminating ‘\n’ with ‘\0’ which is much more useful
+  			//TODO: Parse task (see cracker1.c)!
+  			
+  			//TODO: Put parsed and partitioned task in some global var to communicate w/ worker threads
+  			if(!start) pthread_barrier_wait(&barrier_sync); //don't assign globals for next task until all worker threads done w/ cur task global data (maybe copy it?). BUT, don't wait on 1st iteration or deadlock!
+  			
+  			  			
+  			
+  			pthread_barrier_wait(&barrier_read); //all workers may now read next task
+  		} else {
+  			done = 1; //don't think need below b/c ONLY main will be executing here; workers are waiting on barrier_read. Additionally, main can't change this UNTIL all threads are done w/ cur task
+  			//safeWriter(rwinfo, setDone, NULL);
+  			if(!start) {
+  				pthread_barrier_wait(&barrier_sync); //so workers can continue to read exit signal
+  				pthread_barrier_wait(&barrier_read); //all worker threads may now read exit signal
+  			} else { //1st iteration
+  				pthread_barrier_wait(&barrier_read); //all worker threads may now read exit signal
+  				//pthread_barrier_wait(&barrier_task); //since workers break and DON'T call barrier, we would deadlock
+  			}
+  		}
+  		start = 0;
+  	}
+  	
+	//After all worker threads finish each task, the main thread will print the password (if found), the total number of hashes, the wall clock and CPU time spent on that task, and the ratio of CPU time to wall clock time. Note that we have not provided any of the timing print statements in cracker2.
+	for(size_t i = 0; i < thread_count; i++) {
+		pthread_join(tids[i], NULL);
+	}
+	free(rwinfo);
+	return 0;
+}

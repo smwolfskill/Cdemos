@@ -1,0 +1,56 @@
+/**
+ * Chatroom Lab
+ * CS 241 - Fall 2016
+ */
+#include "camelCaser.h"
+#include <stdlib.h>
+#include <stdio.h> //for test printing
+#include <string.h>
+
+char **camel_caser(const char *input_str) { 
+	char ** output = NULL;
+	int readPos = -1; //position of the counter for reading input_str
+	int outputPos = 0; //position of the counter for writing into output
+	int wordLen = 0; //length of current word so far
+	char cur;
+	bool firstInWord = false; //if first letter in a word
+	/*while(input_str[++readPos]) {
+		//RULES: Convert 1st letter of word to lower
+		//printf("i = %d\n", i);
+		cur = input_str[i];
+		if(ispunct(cur)) { //end of current word
+			output[outputPos] = malloc(wordLen + 1);
+			memcpy(output[outputPos], &
+		} else {
+			if(!isspace(cur)) { //ignore spaces
+				
+			}
+		}
+	}*/
+	char * TEST = getCamelCase("Y es. Bob.", 0, 3, 3);
+	printf("%s\n", TEST);
+	free(TEST);
+	puts("end\n");
+	return output;
+}
+
+/* Gets the correct camelCase format for the sentence between [start, end].
+ * sentLen will be the length of the sentence afterwards.
+ * EX: given ("Y es. Bob.", 0, 3, 3) want return "yEs" */
+char * getCamelCase(const char * input_str, int start, int end, int sentLen) {
+	if(sentLen == 0) return "";
+	char * output = malloc(sentLen+1);
+	int i = 0;
+	bool nextIsUpper = false;
+	bool writtenThings = false;
+	while(i < sentLen) {
+		if(isspace(input_str[start]) && writtenThings) nextIsUpper = true;
+		else nextIsUpper = false;
+		if(isalpha(input_str[start])) {
+			output[i++] = (nextIsUpper ? input_str[start].toupper() : input_str[start].tolower());
+		}
+		start++;
+	}
+	output[sentLen] = '\0';
+	return output;
+}

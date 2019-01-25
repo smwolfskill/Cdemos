@@ -1,0 +1,61 @@
+/**
+ * Map Reduce 0 Lab
+ * CS 241 - Fall 2016
+ */
+#include <fcntl.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/wait.h>
+#include <unistd.h>
+#include <signal.h>
+#include <sys/types.h>
+#include "utils.h"
+
+void printUsage() { printf("usage: ./mr0 <input_file> <output_file> <mapper_executable> <reducer_executable>\n"); }
+
+int main(int argc, char **argv) {
+	if(argc != 5) { printUsage(); return 1; } //not required
+  // Open the input file.
+	FILE* fIn = fopen(argv[1], "r");
+	if(!fIn) { fprintf(stdout, "ERROR: could not open input file '%s'! Quitting.\n", argv[1]); printUsage(); return 1; }
+  // Create a pipe to connect the mapper to the reducer.
+	int fds[2];
+	pipe(fds);
+  // Open the output file.
+	//TODO
+  // Start the mapper.
+	pid_t mapper = fork();
+	if(mapper == -1) { fprintf(stdout, "ERROR: fork failed to create mapper child!\n"); exit(1); }
+	else if(mapper == 0) { //mapper
+		printf("mapper started!\n");
+		//TODO: Pipe mapper output into fds[1] !
+		execlp(argv[3], argv[3], (const char*) NULL);
+		printf("ERROR: mapper child: exec failed to run '%s'!\n", argv[3]);
+		exit(1);
+	} else { //parent
+  // Start the reducer.
+		pid_t reducer = fork();
+		if(reducer == -1) { kill(mapper, SIGKILL); fprintf(stdout, "ERROR: fork failed to create reducer child!\n"); exit(1); }
+		else if(reducer == 0) { //reducer
+			printf("reducer started!\n");
+			//TODO: Read from fds[0]
+			execlp(argv[4], argv[4], (const char*) NULL);
+			printf("ERROR: reducer child: exec failed to run '%s'!\n", argv[4]);
+			exit(1);
+  // Wait for the reducer to finish.
+  		} else { //parent
+  			int status = 0;
+			waitpid(reducer, &status, 0);
+  // Print nonzero subprocess exit codes.
+			if(WEXITSTATUS(status) != 0) fprintf(stdout, "reducer exited with code %d\n", status);
+  // Count the number of lines in the output file.
+			FILE* fOut = fopen(argv[2], "r");
+			if(!fOut) { fprintf(stdout, "ERROR: could not open output file '%s'! Quitting.\n", argv[2]); printUsage(); return 1; }
+			//TODO: Replace seek, tell w/ getline b/c tell only says how many BYTES...
+			fseek(fOut, 0, SEEK_END);
+			fprintf(stdout, "Finished: output file '%s' has %ld lines.\n", argv[2], ftell(fOut));
+			fclose(fOut);
+			return 0;
+		}
+	}
+}

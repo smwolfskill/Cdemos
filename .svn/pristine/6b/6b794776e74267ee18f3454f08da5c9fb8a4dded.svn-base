@@ -1,0 +1,14 @@
+/**
+ * Machine Problem: Vector
+ * CS 241 - Fall 2016
+ */
+
+#include "document.h"
+// test your document here
+int main() { 
+	//1: Read from file "document_test0.txt" and write it back to "...1.txt"
+    Document * doc = Document_create_from_file("document_test0.txt");
+	Document_write_to_file(doc, "document_test1.txt");
+	Document_destroy(doc);
+	return 0; 
+}
