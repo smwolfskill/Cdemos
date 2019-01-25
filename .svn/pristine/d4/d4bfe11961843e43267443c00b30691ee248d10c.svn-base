@@ -1,5 +1,0 @@
-a: b
-    echo "should not display"
-
-b:
-    cat asdf

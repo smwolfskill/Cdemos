@@ -1,2 +1,0 @@
-cat "hist.txt"
-ae
